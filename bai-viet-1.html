@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tôi, Omini, và con đường không theo số đông — Vân Thanh</title>
+<meta name="description" content="Từ founder Omini đến golf connector — câu chuyện về việc trao giá trị trước, bỏ con đường số đông, và những điều tôi học được từ hàng trăm cuộc gặp với doanh nghiệp.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#C4A35A;--gold2:#DFC080;--ink:#0D0D0B;--ink2:#1A1916;--ink3:#242420;--cream:#F4EFE4;--cream2:#EDE5D0;--td:rgba(244,239,228,.58);--tm:rgba(244,239,228,.28)}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--ink);color:var(--cream);overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:800;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(13,13,11,.93);backdrop-filter:blur(24px);border-bottom:1px solid rgba(196,163,90,.07)}
+.nlogo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--gold);text-decoration:none;letter-spacing:.04em}
+.nback{font-size:12px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--td);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
+.nback:hover{color:var(--gold)}
+
+/* PROGRESS BAR */
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--gold);z-index:900;transition:width .1s}
+
+/* HERO */
+.post-hero{padding:110px 48px 56px;max-width:800px;margin:0 auto}
+.post-cat{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.post-cat::before{content:'';width:22px;height:1px;background:var(--gold)}
+.post-title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5.5vw,68px);font-weight:300;line-height:1.05;color:var(--cream);margin-bottom:22px}
+.post-title em{font-style:italic;color:var(--gold)}
+.post-lead{font-size:17px;font-weight:300;line-height:1.8;color:var(--td);max-width:640px;margin-bottom:36px}
+.post-meta{display:flex;align-items:center;gap:16px;padding:20px 0;border-top:1px solid rgba(196,163,90,.1);border-bottom:1px solid rgba(196,163,90,.1);margin-bottom:0}
+.meta-author{display:flex;align-items:center;gap:10px}
+.meta-avatar{width:36px;height:36px;border-radius:50%;overflow:hidden;border:1px solid rgba(196,163,90,.25);flex-shrink:0}
+.meta-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.meta-name{font-size:13px;font-weight:500;color:var(--cream2)}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--tm)}
+.meta-info{font-size:12px;color:var(--tm)}
+
+/* COVER IMAGE */
+.post-cover{max-width:800px;margin:0 auto;padding:0 48px;margin-top:48px}
+.cover-img{width:100%;aspect-ratio:16/7;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,var(--ink2),var(--ink3));position:relative;display:flex;align-items:center;justify-content:center}
+.cover-img img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.cover-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(13,13,11,.6) 100%)}
+.cover-caption{font-size:12px;color:var(--tm);text-align:center;margin-top:10px;font-style:italic}
+
+/* BODY */
+.post-body{max-width:680px;margin:56px auto 0;padding:0 48px 80px}
+.post-body p{font-size:16px;font-weight:300;line-height:1.95;color:var(--td);margin-bottom:26px}
+.post-body p strong{font-weight:500;color:var(--cream)}
+.post-body h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,40px);font-weight:300;color:var(--cream);margin:52px 0 20px;line-height:1.2}
+.post-body h2 em{font-style:italic;color:var(--gold)}
+.post-body h3{font-size:16px;font-weight:500;color:var(--cream);margin:32px 0 12px;letter-spacing:.02em}
+.post-body blockquote{border-left:2px solid var(--gold);padding:16px 24px;margin:36px 0;background:rgba(196,163,90,.04);border-radius:0 12px 12px 0}
+.post-body blockquote p{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;font-weight:300;color:var(--cream2);margin:0;line-height:1.55}
+.post-body .callout{background:linear-gradient(135deg,rgba(196,163,90,.07),rgba(196,163,90,.02));border:1px solid rgba(196,163,90,.13);border-radius:14px;padding:24px 28px;margin:36px 0}
+.post-body .callout p{margin:0;font-size:15px;color:var(--cream)}
+.post-body .callout .callout-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:500}
+.divider{text-align:center;margin:44px 0;color:rgba(196,163,90,.25);letter-spacing:14px;font-size:13px}
+.post-num{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:rgba(196,163,90,.1);line-height:1;margin-bottom:-16px}
+
+/* INLINE PHOTO */
+.inline-photo{width:100%;aspect-ratio:4/3;border-radius:14px;overflow:hidden;margin:36px 0}
+.inline-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+
+/* SIGNATURE */
+.signature{margin-top:48px;padding-top:28px;border-top:1px solid rgba(196,163,90,.1);display:flex;align-items:center;gap:14px}
+.sig-avatar{width:48px;height:48px;border-radius:50%;overflow:hidden;border:1.5px solid rgba(196,163,90,.25);flex-shrink:0}
+.sig-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.sig-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--cream)}
+.sig-role{font-size:12px;color:var(--tm);margin-top:2px}
+
+/* AUTHOR BOX */
+.author-section{max-width:680px;margin:0 auto;padding:0 48px 60px}
+.author-box{display:flex;gap:22px;padding:26px;border-radius:14px;background:var(--ink2);border:1px solid rgba(196,163,90,.1);align-items:flex-start}
+.auth-photo{width:68px;height:68px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(196,163,90,.2)}
+.auth-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.auth-lbl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.auth-name{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--cream);margin-bottom:8px}
+.auth-bio{font-size:13px;color:var(--td);line-height:1.65}
+
+/* MORE */
+.more-section{max-width:680px;margin:0 auto;padding:0 48px 80px}
+.more-lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.more-lbl::before{content:'';width:20px;height:1px;background:var(--gold)}
+.more-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.more-card{padding:20px;border-radius:10px;background:var(--ink2);border:1px solid rgba(196,163,90,.07);text-decoration:none;display:block;transition:all .25s}
+.more-card:hover{border-color:rgba(196,163,90,.2);transform:translateY(-2px)}
+.more-cat{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.more-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:var(--cream);line-height:1.35}
+
+footer{border-top:1px solid rgba(196,163,90,.07);padding:26px 48px;display:flex;align-items:center;justify-content:space-between;background:var(--ink2)}
+.flogo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--gold)}
+.fcopy{font-size:11px;color:var(--tm)}
+
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  .post-hero,.post-cover,.post-body,.author-section,.more-section{padding-left:20px;padding-right:20px}
+  .post-hero{padding-top:90px}
+  .more-grid{grid-template-columns:1fr}
+  .author-box{flex-direction:column}
+  footer{flex-direction:column;gap:12px;text-align:center;padding:22px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav>
+  <a href="index.html" class="nlogo">Vân Thanh</a>
+  <a href="index.html" class="nback">← Trang chủ</a>
+</nav>
+
+<div class="post-hero">
+  <div class="post-cat">Câu chuyện cá nhân · 10 phút đọc</div>
+  <h1 class="post-title">Tôi, Omini,<br>và con đường<br><em>không theo số đông</em></h1>
+  <p class="post-lead">Từ founder Omini đến golf connector — câu chuyện về việc trao giá trị trước khi nhận lại, bỏ con đường số đông để làm điều thật sự đúng, và những gì tôi học được từ hàng trăm cuộc gặp với doanh nghiệp.</p>
+  <div class="post-meta">
+    <div class="meta-author">
+      <div class="meta-avatar"><img src="photo.jpg" alt="Vân Thanh"></div>
+      <span class="meta-name">Vân Thanh</span>
+    </div>
+    <div class="meta-dot"></div>
+    <span class="meta-info">Tháng 5, 2025</span>
+    <div class="meta-dot"></div>
+    <span class="meta-info">10 phút đọc</span>
+  </div>
+</div>
+
+<div class="post-cover">
+  <div class="cover-img">
+    <img src="photo.jpg" alt="Vân Thanh">
+  </div>
+  <p class="cover-caption">Vân Thanh — Founder Ominitouch · Golf & Business Connector</p>
+</div>
+
+<div class="post-body">
+
+  <p>Tôi không bắt đầu bằng một kế hoạch rõ ràng. Không có slide deck, không có roadmap 5 năm, không có mentor ngồi chỉ đường. Tôi bắt đầu bằng một cảm giác — rằng có điều gì đó mình muốn làm khác đi, dù lúc đó tôi chưa biết "khác" trông như thế nào.</p>
+
+  <p>Bài viết này là câu chuyện của tôi. Không phải để inspire ai. Chỉ là để nói thật — về Omini, về golf, về con đường tôi chọn và những thứ tôi học được từ nó.</p>
+
+  <div class="divider">· · ·</div>
+
+  <!-- PHẦN 1 -->
+  <div class="post-num">01</div>
+  <h2>Trao giá trị trước<br><em>khi nhận lại</em></h2>
+
+  <p>Điều đầu tiên tôi học được — không phải từ sách, mà từ thực tế — là <strong>người ta không nhớ bạn vì bạn giỏi. Họ nhớ bạn vì bạn đã giúp họ.</strong></p>
+
+  <p>Khi tôi bắt đầu làm việc với doanh nghiệp, phản xạ đầu tiên của hầu hết mọi người là pitch. Gửi deck. Báo giá. Theo dõi. Tôi cũng từng làm vậy — cho đến khi nhận ra rằng cách đó tạo ra giao dịch, không tạo ra quan hệ.</p>
+
+  <blockquote><p>"Tôi bắt đầu đến mỗi cuộc gặp với một câu hỏi duy nhất: mình có thể trao gì cho người này hôm nay — mà không cần nhận lại gì?"</p></blockquote>
+
+  <p>Đôi khi đó là một kết nối — tôi biết ai đó họ nên gặp. Đôi khi là một góc nhìn về thị trường mà họ chưa nghĩ đến. Đôi khi chỉ đơn giản là lắng nghe đúng cách, để họ tự nhìn ra vấn đề của mình.</p>
+
+  <p>Và điều kỳ lạ xảy ra: <strong>deals bắt đầu đến mà không cần pitch.</strong> Không phải vì tôi giỏi bán hàng hơn. Mà vì khi bạn thật sự trao giá trị, người ta muốn làm việc với bạn — không phải vì họ phải, mà vì họ muốn.</p>
+
+  <div class="callout">
+    <div class="callout-label">Điều tôi áp dụng mỗi ngày</div>
+    <p>Trước mỗi cuộc gặp, tôi tự hỏi: "Mình có thể mang đến thứ gì có giá trị cho người này — dù cuộc gặp này không dẫn đến deal nào?" Nếu không nghĩ ra được, tôi tiếp tục chuẩn bị.</p>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <!-- PHẦN 2 -->
+  <div class="post-num">02</div>
+  <h2>Tại sao tôi bỏ<br><em>con đường số đông</em></h2>
+
+  <p>Số đông không sai. Chỉ là không phải tôi.</p>
+
+  <p>Có một thời gian tôi làm đúng những thứ được kỳ vọng — gặp đúng người, nói đúng điều, đi đúng con đường được bảo là an toàn. Và tôi giỏi làm điều đó, đủ giỏi để không ai nhận ra rằng mỗi buổi sáng tôi thức dậy với một cảm giác gì đó thiếu thiếu. Không phải bất hạnh. Chỉ là <strong>không đủ thật.</strong></p>
+
+  <p>Khi tôi quyết định xây Ominitouch — một startup không theo template có sẵn, không theo lời khuyên của số đông — nhiều người xung quanh không hiểu. "Sao không làm cái gì rõ ràng hơn?" "Thị trường đó nhỏ quá." "Rủi ro cao."</p>
+
+  <p>Họ không sai về mặt logic. Nhưng logic không phải thứ duy nhất quyết định con đường của một người.</p>
+
+  <blockquote><p>"Nếu không ai biết bạn đang làm gì, bạn có vẫn muốn làm nó không? Nếu câu trả lời là có — đó thường là dấu hiệu bạn đang đi đúng hướng."</p></blockquote>
+
+  <p>Với tôi, câu trả lời là có. Và đó là đủ để bắt đầu.</p>
+
+  <div class="divider">· · ·</div>
+
+  <!-- PHẦN 3 -->
+  <div class="post-num">03</div>
+  <h2>Từ Omini đến Golf —<br><em>hành trình kết nối</em></h2>
+
+  <div class="inline-photo">
+    <img src="photo.jpg" alt="Vân Thanh">
+  </div>
+
+  <p>Ominitouch bắt đầu từ một câu hỏi đơn giản: tại sao việc kết nối doanh nghiệp với nhau lại phải phức tạp và thiếu chân thực đến vậy?</p>
+
+  <p>Từ đó, tôi dần dần tìm ra rằng môi trường tốt nhất để kết nối không phải là hội nghị, không phải là email hay LinkedIn. Nó là những không gian mà người ta thư giãn, bỏ guard xuống, và trở thành con người thật của họ.</p>
+
+  <p>Golf là một trong những không gian đó.</p>
+
+  <p>Không phải vì tôi đam mê golf từ bé. Mà vì tôi nhận ra: <strong>4–5 tiếng trên sân golf là 4–5 tiếng người ta không kiểm soát image của mình.</strong> CEO cũng có thể đánh hỏng cú putt. Doanh nhân cũng có thể cười khi mắc lỗi. Và trong những khoảnh khắc đó, quan hệ thật sự được xây dựng.</p>
+
+  <p>Tôi bắt đầu làm việc ở giao điểm giữa golf, business và brands — kết nối những thứ tưởng không liên quan với nhau. Và nó hiệu quả, không phải vì tôi có một hệ thống hay công thức gì đặc biệt, mà vì tôi đến với tâm thế trao giá trị thật — không phải bán hàng.</p>
+
+  <div class="callout">
+    <div class="callout-label">Bài học từ hành trình này</div>
+    <p>Con đường không bao giờ thẳng. Từ Omini đến golf connector không phải là một pivot có kế hoạch — nó là kết quả của việc tôi luôn hỏi "mình có thể giúp ích thêm ở đâu?" và đi theo câu trả lời đó, dù nó dẫn đến nơi bất ngờ.</p>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <!-- PHẦN 4 -->
+  <div class="post-num">04</div>
+  <h2>Điều tôi học được từ<br><em>hàng trăm cuộc gặp</em></h2>
+
+  <p>Sau hàng trăm cuộc gặp với doanh nghiệp — từ startup đến tập đoàn, từ ngân hàng đến hãng xe, từ BĐS đến luxury brands — tôi có thể nói chắc một điều:</p>
+
+  <p><strong>Người ta không mua sản phẩm hay dịch vụ của bạn. Họ mua niềm tin vào bạn trước.</strong></p>
+
+  <h3>Bài học 1 — Nghe nhiều hơn nói</h3>
+  <p>Tôi từng nghĩ người bán hàng giỏi là người thuyết phục giỏi. Sai hoàn toàn. Người bán hàng giỏi nhất tôi từng thấy là người hỏi đúng câu, rồi im lặng đủ lâu để đối tác tự nói ra vấn đề của họ. Đối tác tự thuyết phục bản thân — bạn chỉ cần tạo không gian cho điều đó xảy ra.</p>
+
+  <h3>Bài học 2 — Không phải deal nào cũng nên ký</h3>
+  <p>Tôi đã từ chối một số hợp tác dù giá trị hợp đồng hấp dẫn — vì không phù hợp về con người. Không lần nào tôi hối hận. Một deal xấu không chỉ lãng phí tiền — nó lãng phí năng lượng, thời gian và đôi khi cả uy tín của bạn.</p>
+
+  <h3>Bài học 3 — Thương hiệu cá nhân là sản phẩm phụ</h3>
+  <p>Tôi không bao giờ cố "xây thương hiệu cá nhân." Tôi chỉ nhất quán trao giá trị, nhất quán trung thực, và nhất quán là chính mình — trong từng cuộc gặp, từng email, từng lần có thể giúp được ai đó. Thương hiệu là thứ người khác đặt cho bạn khi bạn làm điều đó đủ lâu và đủ thật.</p>
+
+  <blockquote><p>"Thương hiệu cá nhân không phải thứ bạn tạo ra. Đó là thứ người khác nói về bạn khi bạn không có mặt trong phòng."</p></blockquote>
+
+  <h3>Bài học 4 — Long game luôn thắng</h3>
+  <p>Golf dạy tôi điều này rõ hơn bất kỳ sách kinh doanh nào. Không ai thắng cả vòng 18 hố bằng cách chỉ nghĩ đến cú đánh trước mắt. Business cũng vậy. Quan hệ được vun đắp 6 tháng có thể mang về deal 3 năm. Đừng vội ký — hãy vội được tin tưởng.</p>
+
+  <div class="divider">· · ·</div>
+
+  <p>Tôi không biết con đường tiếp theo sẽ dẫn đến đâu. Omini đang tiếp tục lớn. Công việc kết nối brands với cộng đồng golf đang mở ra những cánh cửa tôi chưa từng nghĩ đến. Và tôi vẫn đang học — từ mỗi cuộc gặp, mỗi deal, mỗi người thú vị tôi có cơ hội ngồi xuống lắng nghe.</p>
+
+  <p>Nếu bạn đang đọc đến đây và đang phân vân về con đường của mình — tôi không có câu trả lời đúng cho bạn. Nhưng tôi có một câu hỏi:</p>
+
+  <p><strong>Điều bạn đang làm — bạn làm vì bạn muốn, hay vì bạn muốn người khác thấy bạn làm điều đó?</strong></p>
+
+  <p>Câu trả lời đó thường nói lên tất cả.</p>
+
+  <div class="signature">
+    <div class="sig-avatar"><img src="photo.jpg" alt="Vân Thanh"></div>
+    <div>
+      <div class="sig-name">Vân Thanh</div>
+      <div class="sig-role">Founder, Ominitouch · Golf & Business Connector</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- AUTHOR BOX -->
+<div class="author-section">
+  <div class="author-box">
+    <div class="auth-photo"><img src="photo.jpg" alt="Vân Thanh"></div>
+    <div>
+      <div class="auth-lbl">Tác giả</div>
+      <div class="auth-name">Vân Thanh</div>
+      <div class="auth-bio">Founder của Ominitouch — startup kết nối doanh nghiệp. Golf & Business Connector — làm việc ở giao điểm giữa golf, brands và con người. Viết về quan hệ, business và những thứ không ai dạy ở trường.</div>
+    </div>
+  </div>
+</div>
+
+<!-- MORE POSTS -->
+<div class="more-section">
+  <div class="more-lbl">Bài viết khác</div>
+  <div class="more-grid">
+    <a href="index.html#blog" class="more-card">
+      <div class="more-cat">Xây dựng quan hệ</div>
+      <div class="more-title">Tại sao tôi không bao giờ đến cuộc gặp mà không mang theo thứ gì để cho đi</div>
+    </a>
+    <a href="index.html#blog" class="more-card">
+      <div class="more-cat">EQ & Đàm phán</div>
+      <div class="more-title">Câu hỏi tốt hơn câu trả lời — luôn luôn</div>
+    </a>
+    <a href="index.html#blog" class="more-card">
+      <div class="more-cat">Golf & Business</div>
+      <div class="more-title">Sân golf dạy tôi điều gì về cách làm business dài hạn</div>
+    </a>
+    <a href="index.html#connect" class="more-card">
+      <div class="more-cat">Kết nối</div>
+      <div class="more-title">Muốn trao đổi với Vân Thanh? Bắt đầu một cuộc trò chuyện →</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="flogo">Vân Thanh</div>
+  <div class="fcopy">© 2025 · hivanthanh.com</div>
+</footer>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll', () => {
+  const winScroll = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.getElementById('progress').style.width = scrolled + '%';
+});
+</script>
+
+</body>
+</html>
